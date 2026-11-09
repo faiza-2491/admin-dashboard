@@ -20,7 +20,11 @@
     padding: 0px;
     margin: 0px;
     font-family: "Roboto", Arial, Helvetica, sans-serif, system-ui;
+    --grayTextColor: rgb(91, 91, 91);
+    --lightGrayBackground: rgba(214, 221, 229, 0.729);
+    --blueBackground: rgb(5, 143, 217);
 }
+
 
 .dash-container
 {
@@ -30,23 +34,63 @@
     grid-template-rows: 1fr 5fr;
 }
 
-
-.dash-main-content, .header, .dash-sidebar, .nav
-{
-    border: 1px solid black;
-}
-
 .header {
     display: grid;
     grid-template-rows: 1fr 2fr;
     grid-template-columns: 2fr 1fr;
     align-items: center;
     background-color: white;
-}
-
-.header{
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.header .greeting, .header .nav-buttons
+{
+    padding-top: 1rem;
+}
+.header form, .header div .name
+{
+    padding-bottom: 1rem;
+}
+
+.header div .name
+{
+    font-weight: bold;
+}
+
+.header form input[type = "search"]
+{
+    border: none;
+    background-color: var(--lightGrayBackground);
+    padding: 0.4rem;
+    border-radius: 1rem;
+    width: 70%;
+    
+}
+
+svg
+{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+
+.header .nav-buttons > button
+{
+    background-color: var(--blueBackground);
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    margin-right: 1rem;
 }
 
 .dash-sidebar
@@ -61,7 +105,7 @@
     gap: 50px;
     font-weight: bold;
     color:rgb(228, 230, 231);
-    background-color: rgb(5, 143, 217);
+    background-color: var(--blueBackground);
 }
 
 .user-info, .user-settings{
@@ -79,14 +123,13 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 3fr 1fr;
     gap: 16px;
-    background-color: rgba(214, 221, 229, 0.729);
+    background-color: var(--lightGrayBackground);
 }
 
 .projects
 {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    border: 1px solid gray;
 }
 
 .projects-container
@@ -117,18 +160,76 @@
 .project .content 
 {
     font-size: 0.9rem;
-    color: rgb(91, 91, 91);
+    color: var(--grayTextColor);
 }
 
 .announcements
 {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    border: 1px solid gray;
+}
+
+.announcements h2
+{
+    margin-bottom: 1rem;
+}
+.announcements div, .trending div
+{
+    background-color: white;
+}
+
+.announcements div
+{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.announcements div > div
+{
+    border-radius: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.announcements div > div > .head
+{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.announcements div > div > .content
+{
+    font-size: 0.8rem;
+    color: var(--grayTextColor);
+}
+.bottom-border
+{
+    border-bottom: 1px solid rgb(205, 205, 205);
 }
 .trending
 {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    border: 1px solid gray;
 }
+
+.trending div
+{
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.trending h2{
+    margin-bottom: 1rem;
+}
+
+.trending div > div > .content
+{
+    font-size: 0.9rem;
+    color: var(--grayTextColor);
+}
+
+
