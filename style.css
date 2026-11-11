@@ -23,6 +23,7 @@
     --grayTextColor: rgb(91, 91, 91);
     --lightGrayBackground: rgba(214, 221, 229, 0.729);
     --blueBackground: rgb(5, 143, 217);
+    --lightGrayShadow: rgb(180, 180, 180);
 }
 
 
@@ -52,11 +53,13 @@
 {
     padding-top: 1rem;
 }
-.header form, .header div .right
-{
-    padding-bottom: 1rem;
-}
 
+.header div.right
+{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
 .header .right .name
 {
     font-weight: bold;
@@ -84,11 +87,34 @@ svg
     height: 1.5rem;
 }
 
+svg.circle
+{
+    width: 3rem;
+    height: 3rem;
+}
+svg.big-circle
+{
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.header
+{
+    box-shadow: 0rem 0rem 1rem var(--lightGrayShadow);
+    clip-path: inset(0px 0px -1rem 0px);
+}
 .header .right
 {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+.header .greeting
+{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .header .nav-buttons > button
@@ -168,6 +194,7 @@ li
     padding-right: 16px;
     padding-top: 25px;
     padding-bottom: 25px;
+    box-shadow: 0.1rem 0.15rem 0.3rem var(--lightGrayShadow);
     
 }
 
@@ -214,6 +241,12 @@ li
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 0.5rem;
+    
+}
+
+.announcements > div
+{
+    box-shadow: 0.15rem 0.2rem 0.3rem var(--lightGrayShadow);
 }
 
 .announcements div > div
@@ -239,16 +272,31 @@ li
 {
     border-bottom: 1px solid rgb(205, 205, 205);
 }
+
 .trending
 {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+
 }
 
 .trending div
 {
     padding: 0.8rem;
     border-radius: 0.5rem;
+}
+
+.trending > div
+{
+    box-shadow: 0.15rem 0.2rem 0.3rem var(--lightGrayShadow);
+}
+
+
+.trending div .account
+{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .trending h2{
